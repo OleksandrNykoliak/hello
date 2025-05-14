@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <h2>Head office</h2>
+      <p><strong>Address:</strong><br>
+      Tallinn, Estonia, Põhja-Tallinna linnaosa,<br>Maleva tn 1-83, 11711</p>
+      <p><strong>Email:</strong> info@silversword.eu</p>
+      <p><strong>Phone:</strong> +372 52 66 0 14</p>
+
+      <h2>European Sales Office</h2>
+      <p><strong>Email:</strong> sales@silversword.eu</p>
+      <p><strong>Phone:</strong> +39 351 348 32 52</p>
+
+      <h2>Business hours</h2>
+      <p>Monday - Friday / 9 am to 6 pm<br>
+         Saturday / 10 am to 3 pm<br>
+         Sunday / Closed</p>
+
+      <h2>Company Info</h2>
+      <p><strong>SilverSword OÜ</strong><br>
+         Registrikood: 14193356<br>
+         KMKR: EE102557998<br>
+         IBAN: EE597700771008587579<br>
+         SWIFT/BIC: LHVBEE22</p>
+
+      <div class="d-flex gap-3">
+        <a href="#"><img src="{% static 'images/facebook-icon.png' %}" alt="Facebook" width="32"></a>
+        <a href="#"><img src="{% static 'images/youtube-icon.png' %}" alt="YouTube" width="32"></a>
+        <a href="#"><img src="{% static 'images/pinterest-icon.png' %}" alt="Pinterest" width="32"></a>
+        <a href="#"><img src="{% static 'images/linkedin-icon.png' %}" alt="LinkedIn" width="32"></a>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <h2>Contact Form</h2>
+      <form method="post" action="#">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="message" class="form-label">Message *</label>
+          <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label for="first_name" class="form-label">First Name *</label>
+            <input type="text" class="form-control" id="first_name" name="first_name" required>
+          </div>
+          <div class="col">
+            <label for="last_name" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="last_name" name="last_name">
+          </div>
+        </div>
+
+        <div class="mb-3 mt-3">
+          <label for="company" class="form-label">Company Name</label>
+          <input type="text" class="form-control" id="company" name="company">
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="text" class="form-control" id="phone" name="phone">
+          </div>
+          <div class="col">
+            <label for="email" class="form-label">Email *</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+        </div>
+
+        <div class="mb-3 mt-3">
+          <label for="request" class="form-label">Your request</label>
+          <textarea class="form-control" id="request" name="request" rows="2"></textarea>
+        </div>
+
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" id="gdpr" required>
+          <label class="form-check-label" for="gdpr">
+            I authorize the data controller to use my personal data for sending communications relating to this request for contact.
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

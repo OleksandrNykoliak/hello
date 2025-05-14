@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid py-5">
+  <div class="row align-items-center">
+    <!-- Left column: YouTube video and description -->
+    <div class="col-lg-6 mb-4 mb-lg-0">
+      <div class="ratio ratio-16x9 mb-4">
+        <iframe 
+          src="https://www.youtube.com/embed/KudtLGludsQ" 
+          title="About Us - SilverSword" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="fs-5 text-justify" style="line-height: 1.7;">
+        Founded in 2017 in the heart of Tallinn, Estonia, SilverSword specializing in European wood species, offering a wide range of veneers and edging materials. From the rich texture of oak and the refined elegance of beech to the unique character of ash and cherry, our product line meets a variety of aesthetic and functional requirements. Each piece of veneer and each meter of edging material is carefully selected and processed to ensure the best quality and consistency.
+      </p>
+    </div>
+
+    <div class="col-lg-6 text-center d-flex flex-column align-items-center justify-content-center">
+        <img src="{% static 'images/1.png' %}" 
+             alt="SilverSword Logo Top" 
+             class="img-fluid mb-4" 
+             style="max-height: 40vh; object-fit: contain; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+      
+        <img src="{% static 'images/2.png' %}" 
+             alt="SilverSword Logo Bottom" 
+             class="img-fluid" 
+             style="max-height: 40vh; object-fit: contain; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+      </div>
+      
+  </div>
+</div>
+{% endblock %}
